@@ -36,4 +36,9 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+
+    public int GetGold() 
+    {
+        return gold;
+    }
 }
