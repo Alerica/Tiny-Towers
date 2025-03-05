@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 818542774387007614}
   - component: {fileID: 2640313780049723867}
   - component: {fileID: 8878214308006422268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c60d55495621ed479cf56118765ff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 2
