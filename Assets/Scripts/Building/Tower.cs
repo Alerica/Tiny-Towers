@@ -8,12 +8,16 @@ public class Tower : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform bowRotationPoint;
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Transform firingPoint;
 
     [Header("Attribute")]
     [SerializeField] private float targetInRange = 8f;
     [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float aps = 1f; // Attack per second
 
     private Transform target;
+    private float timeUntilFire;
     
     void Start()
     {
@@ -32,6 +36,13 @@ public class Tower : MonoBehaviour
         if(!CheckTargetIsInRange())
         {
             target = null;
+        } else {
+            timeUntilFire += Time.deltaTime;
+            if(timeUntilFire >= 1f / aps)
+            {
+                Shoot();
+                timeUntilFire = 0f;
+            }
         }
     }
 
@@ -59,6 +70,13 @@ public class Tower : MonoBehaviour
     private bool CheckTargetIsInRange() 
     {
         return Vector2.Distance(target.position, transform.position) < targetInRange;
+    }
+
+    private void Shoot() 
+    {
+        GameObject arrowObj = Instantiate(arrowPrefab, firingPoint.position, Quaternion.identity);
+        Arrow arrowScript = arrowObj.GetComponent<Arrow>();
+        arrowScript.SetTarget(target);
     }
 
     private void OnDrawGizmosSelected()
