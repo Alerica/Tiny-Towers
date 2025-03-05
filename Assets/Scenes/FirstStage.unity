@@ -2574,6 +2574,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4194811630962303181, guid: 3f38b061caca8e041a400e8a63fb564e, type: 3}
   m_PrefabInstance: {fileID: 523646102}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &552508395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552508397}
+  - component: {fileID: 552508396}
+  - component: {fileID: 552508398}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &552508396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552508395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18aa8e90312fed45adf2175c8b01266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 1723485930}
+  path:
+  - {fileID: 464899926}
+  - {fileID: 1608211275}
+  - {fileID: 384354976}
+  - {fileID: 1148661931}
+  - {fileID: 1094757698}
+  - {fileID: 1123115362}
+  - {fileID: 1513168773}
+  - {fileID: 1225361253}
+  - {fileID: 302134793}
+  - {fileID: 1043647903}
+--- !u!4 &552508397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552508395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.6579704, y: 6.0122595, z: 0.083703905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552508398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552508395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3eca85c88e683b4c9d5bb1ad0f46e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7752820384548467362, guid: 4b9cc36ffa496b649937d86db4374402, type: 3}
+  enemiesCount: 10
+  enemiesPerSecond: 2
+  timeBetweenWaves: 5
+  difficultyScalingFactor: 0.75
+  currentWave: 1
 --- !u!1001 &573335103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10086,3 +10162,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 127159205}
   - {fileID: 1958535932}
+  - {fileID: 552508397}

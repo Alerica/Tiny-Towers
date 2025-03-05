@@ -138,20 +138,20 @@ TextureImporter:
       name: Wood_Tower_Blue_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 20
-        width: 132
-        height: 157
+        x: 0
+        y: 0
+        width: 256
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a68dc34316f9ec210800000000000000
-      internalID: 1355195777722144874
+      spriteID: 4540841a220ffcc46bc285cf899f8d4c
+      internalID: -1623059936
       vertices: []
       indices: 
       edges: []
@@ -160,20 +160,20 @@ TextureImporter:
       name: Wood_Tower_Blue_1
       rect:
         serializedVersion: 2
-        x: 318
-        y: 20
-        width: 132
-        height: 157
+        x: 256
+        y: 0
+        width: 256
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 16247bdd37c514570800000000000000
-      internalID: 8449136028634530401
+      spriteID: 15b25a2dbfa68cd4baf8ed5df47c630a
+      internalID: -922856946
       vertices: []
       indices: 
       edges: []
@@ -182,20 +182,20 @@ TextureImporter:
       name: Wood_Tower_Blue_2
       rect:
         serializedVersion: 2
-        x: 574
-        y: 20
-        width: 132
-        height: 157
+        x: 512
+        y: 0
+        width: 256
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b81e0ec4a6592c3c0800000000000000
-      internalID: -4340742807042858613
+      spriteID: 035d9790fd0e2724cace641c35941b9c
+      internalID: -1943358896
       vertices: []
       indices: 
       edges: []
@@ -204,20 +204,20 @@ TextureImporter:
       name: Wood_Tower_Blue_3
       rect:
         serializedVersion: 2
-        x: 832
-        y: 20
-        width: 128
-        height: 157
+        x: 768
+        y: 0
+        width: 256
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 314256150ed2d39c0800000000000000
-      internalID: -3945947257045179373
+      spriteID: 4920df2abf7f49d4d8fcf35ba0092884
+      internalID: -1537189268
       vertices: []
       indices: 
       edges: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0e11befa6dd6e6543be51e09d8da9041
     internalID: 0
     vertices: []
     indices: 
@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wood_Tower_Blue_0: -1623059936
+      Wood_Tower_Blue_1: -922856946
+      Wood_Tower_Blue_2: -1943358896
+      Wood_Tower_Blue_3: -1537189268
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
