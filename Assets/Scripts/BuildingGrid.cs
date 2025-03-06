@@ -6,7 +6,8 @@ public class BuildingGrid : MonoBehaviour
     [Header("References")]
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Color hoverColor;
-    private GameObject building;
+    private GameObject buildingObject;
+    public Tower tower;
     private Color startColor;
 
     void Awake()
@@ -30,9 +31,14 @@ public class BuildingGrid : MonoBehaviour
 
     void OnMouseDown()
     {
+        if(UIManager.main.IsHoveringUI()) return;
+        
         Debug.Log("Build Tower at " + transform.position);
-        if (building != null) return;
-
+        if (buildingObject != null) 
+        {
+            tower.OpenUpgradeUI();
+            return;
+        }
         Building buildingToBuild = BuildManager.main.GetSelectedBuilding();
         if(buildingToBuild.cost > GameManager.main.GetGold())
         {
@@ -42,6 +48,7 @@ public class BuildingGrid : MonoBehaviour
 
         GameManager.main.DecreaseGold(buildingToBuild.cost);
         
-        building = Instantiate(buildingToBuild.prefab, transform.position, Quaternion.identity);
+        buildingObject = Instantiate(buildingToBuild.prefab, transform.position, Quaternion.identity);
+        tower = buildingObject.GetComponent<Tower>();
     }
 }

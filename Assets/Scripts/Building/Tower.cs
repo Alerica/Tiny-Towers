@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.ShaderGraph.Internal;
 using System.Timers;
+using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class Tower : MonoBehaviour
 {
@@ -10,18 +12,28 @@ public class Tower : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private GameObject upgradeUI;
+    [SerializeField] private Button upgradeButton;
 
     [Header("Attribute")]
     [SerializeField] private float targetInRange = 8f;
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float aps = 1f; // Attack per second
+    [SerializeField] private int baseCost = 100;
+
+    private float apsBase;
+    private float targetInRangeBase;
 
     private Transform target;
     private float timeUntilFire;
+
+    private int level = 1;
     
     void Start()
     {
-        
+        apsBase = aps;
+        targetInRangeBase = targetInRange;
+        upgradeButton.onClick.AddListener(UpgradeBuilding);
     }
 
     void Update()
@@ -79,6 +91,49 @@ public class Tower : MonoBehaviour
         arrowScript.SetTarget(target);
     }
 
+    public void OpenUpgradeUI () 
+    {
+        upgradeUI.SetActive(true);
+    }
+
+     public void CloseUpgradeUI () 
+    {
+        upgradeUI.SetActive(false);
+        UIManager.main.SetHoveringState(false);
+    }
+
+    public void UpgradeBuilding()
+    {
+        if(CalculateCost() > GameManager.main.GetGold()) return;
+
+        GameManager.main.DecreaseGold(CalculateCost());
+
+        level ++;
+        aps = CalculateAPS();
+        targetInRange = CalculateRange();
+        CloseUpgradeUI();
+
+        Debug.Log("New APS: " + aps);
+        Debug.Log("New Range: " + targetInRange);
+        Debug.Log("New Cost" + CalculateCost());
+        
+    }
+
+    private int CalculateCost()
+    {
+        return Mathf.RoundToInt(baseCost * Mathf.Pow(level, 0.8f));
+    }
+
+    private float CalculateAPS()
+    {
+        return apsBase * Mathf.Pow(level, 0.5f);
+    }
+
+    private float CalculateRange()
+    {
+        return targetInRangeBase * Mathf.Pow(level, 0.3f);
+    }
+ 
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.cyan;
