@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 818542774387007614}
   - component: {fileID: 2640313780049723867}
   - component: {fileID: 8878214308006422268}
-  m_Layer: 0
+  - component: {fileID: 6238444298886110286}
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,4 +176,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c60d55495621ed479cf56118765ff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 2
+--- !u!114 &6238444298886110286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752820384548467362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3d039662ef6140ad67592d52d22dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 100
+  enemyGold: 50
