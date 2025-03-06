@@ -14,6 +14,8 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject upgradeUI;
     [SerializeField] private Button upgradeButton;
+    [SerializeField] private AudioSource shootAudio;
+    [SerializeField] private AudioSource upgradeAudio;
 
     [Header("Attribute")]
     [SerializeField] private float targetInRange = 8f;
@@ -89,6 +91,11 @@ public class Tower : MonoBehaviour
         GameObject arrowObj = Instantiate(arrowPrefab, firingPoint.position, Quaternion.identity);
         Arrow arrowScript = arrowObj.GetComponent<Arrow>();
         arrowScript.SetTarget(target);
+
+        if (shootAudio != null)
+        {
+            shootAudio.Play();
+        }
     }
 
     public void OpenUpgradeUI () 
@@ -117,6 +124,10 @@ public class Tower : MonoBehaviour
         Debug.Log("New Range: " + targetInRange);
         Debug.Log("New Cost" + CalculateCost());
         
+        if (upgradeAudio != null)
+        {
+            upgradeAudio.Play();
+        }
     }
 
     private int CalculateCost()
