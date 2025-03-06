@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [Header("References")]
     [SerializeField] TextMeshProUGUI goldUI;
     Animator animator;
-    private bool isMenuOpen = true;
+    private bool isMenuOpen = false;
     public bool mouseOver = false;
     void OnGUI()
     {
