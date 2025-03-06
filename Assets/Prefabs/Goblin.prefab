@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2640313780049723867}
   - component: {fileID: 8878214308006422268}
   - component: {fileID: 6238444298886110286}
+  - component: {fileID: 1893038072765333640}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
@@ -191,3 +192,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 100
   enemyGold: 50
+--- !u!95 &1893038072765333640
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752820384548467362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9189ae06c6e5e88408bf1e8fd9008fbb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

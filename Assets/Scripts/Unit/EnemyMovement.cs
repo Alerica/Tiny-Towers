@@ -4,6 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("References")]
     private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRenderer;
 
     [Header("Attributes")]
     [SerializeField]
@@ -15,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -42,5 +44,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 direction = (target.position - transform.position).normalized;
         rb2d.linearVelocity = direction * moveSpeed;
+
+        if (direction.x > 0)
+            spriteRenderer.flipX = false;
+        else if (direction.x < 0)
+            spriteRenderer.flipX = true;
     }
 }
