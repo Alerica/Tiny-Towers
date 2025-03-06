@@ -1,15 +1,15 @@
+using UnityEngine;
 using Mono.Cecil;
 using UnityEditor.Rendering.BuiltIn.ShaderGraph;
-using UnityEngine;
-
-public class Arrow : MonoBehaviour
+public class TNT : MonoBehaviour
 {
     [Header("References")]
     private Rigidbody2D rb2d;
+    [SerializeField] private GameObject explosionPrefab;
 
     [Header("Attributes")]
-    [SerializeField] private float arrowSpeed = 6f;
-    [SerializeField] private int arrowDamage = 25;
+    [SerializeField] private float TNTSpeed = 8f;
+    [SerializeField] private int TNTDamage = 100;
     [SerializeField] private Transform target;
     
 
@@ -22,9 +22,9 @@ public class Arrow : MonoBehaviour
     {
         if(!target) return;
         Vector2 direction = (target.position - transform.position).normalized;
-        rb2d.linearVelocity = direction * arrowSpeed;
+        rb2d.linearVelocity = direction * TNTSpeed;
         
-        RotateArrowTowardsTarget(direction);
+        RotateTNTTowardsTarget(direction);
     }
 
     public void SetTarget(Transform _target) {
@@ -33,11 +33,16 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<Health> ().TakeDamage(arrowDamage);
+        collision.gameObject.GetComponent<Health> ().TakeDamage(TNTDamage);
+        
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 
-    private void RotateArrowTowardsTarget(Vector2 direction)
+    private void RotateTNTTowardsTarget(Vector2 direction)
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
