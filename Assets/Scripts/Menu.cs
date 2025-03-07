@@ -6,8 +6,9 @@ public class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("References")]
     [SerializeField] TextMeshProUGUI goldUI;
+    [SerializeField] private AudioSource toggleAudio;
     Animator animator;
-    private bool isMenuOpen = true;
+    private bool isMenuOpen = false;
     public bool mouseOver = false;
     void OnGUI()
     {
@@ -28,6 +29,11 @@ public class Menu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         isMenuOpen = !isMenuOpen;
         animator.SetBool("isMenuOpen", isMenuOpen);
+
+        if (toggleAudio != null)
+        {
+            toggleAudio.Play();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -8,6 +8,7 @@ public class BuildingGrid : MonoBehaviour
     [SerializeField] private Color hoverColor;
     private GameObject buildingObject;
     public Tower tower;
+    public TowerSniper towerSniper;
     private Color startColor;
 
     void Awake()
@@ -36,9 +37,13 @@ public class BuildingGrid : MonoBehaviour
         Debug.Log("Build Tower at " + transform.position);
         if (buildingObject != null) 
         {
-            tower.OpenUpgradeUI();
+            if(buildingObject.GetComponent<Tower>() != null)
+                tower.OpenUpgradeUI();
+            else if(buildingObject.GetComponent<TowerSniper>() != null)
+                towerSniper.OpenUpgradeUI();
             return;
         }
+
         Building buildingToBuild = BuildManager.main.GetSelectedBuilding();
         if(buildingToBuild.cost > GameManager.main.GetGold())
         {
@@ -49,6 +54,7 @@ public class BuildingGrid : MonoBehaviour
         GameManager.main.DecreaseGold(buildingToBuild.cost);
         
         buildingObject = Instantiate(buildingToBuild.prefab, transform.position, Quaternion.identity);
+        towerSniper = buildingObject.GetComponent<TowerSniper>();
         tower = buildingObject.GetComponent<Tower>();
     }
 }

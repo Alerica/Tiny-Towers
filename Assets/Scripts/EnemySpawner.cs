@@ -7,7 +7,8 @@ using UnityEngine.Rendering;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField]private GameObject[] enemyPrefabs;
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private GameObject winMenuUI;
 
 
     [Header("Attributes")]
@@ -69,7 +70,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void EndWave()
     {
-        if(currentWave == finalWaves) return;
+        if(currentWave == finalWaves) 
+        {
+            winMenuUI.SetActive(true);
+            return;
+        }
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
