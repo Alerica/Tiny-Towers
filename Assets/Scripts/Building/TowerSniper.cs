@@ -15,7 +15,7 @@ public class TowerSniper : MonoBehaviour
     [Header("Attribute")]
     [SerializeField] private float targetInRange = 8f;
     [SerializeField] private float aps = 0.5f; // Attack per second
-    [SerializeField] private int baseCost = 100;
+    [SerializeField] private int baseCost = 200;
 
     private float apsBase;
     private float targetInRangeBase;

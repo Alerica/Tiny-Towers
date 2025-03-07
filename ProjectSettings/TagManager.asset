@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Projectile
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 1795431825
+    locked: 0
+  - name: Path
+    uniqueID: 2929481807
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -49,6 +55,12 @@ TagManager:
     locked: 0
   - name: Weapon
     uniqueID: 2620461953
+    locked: 0
+  - name: Projectile
+    uniqueID: 2855937341
+    locked: 0
+  - name: UI
+    uniqueID: 454288361
     locked: 0
   m_RenderingLayers:
   - Default
