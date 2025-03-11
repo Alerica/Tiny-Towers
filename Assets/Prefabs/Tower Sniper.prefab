@@ -799,8 +799,8 @@ MonoBehaviour:
   upgradeButton: {fileID: 1040388697946894004}
   shootAudio: {fileID: 4924283289366907309}
   upgradeAudio: {fileID: 1203425926767211767}
-  targetInRange: 8
-  aps: 0.5
+  targetInRange: 6
+  aps: 0.75
   baseCost: 200
 --- !u!1 &6315675839850302455
 GameObject:
