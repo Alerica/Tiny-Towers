@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 public class PlayMenu : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject levelUI; // Assign in Inspector
+    [SerializeField] private GameObject levelUI; 
+    [SerializeField] private GameObject audioUI;
 
     public void ToggleLevelUI()
     {
         levelUI.SetActive(true); 
+    }
+
+    public void ToggleAudioUI()
+    {
+        audioUI.SetActive(true); 
     }
     public void LoadScene(string sceneName)
     {
